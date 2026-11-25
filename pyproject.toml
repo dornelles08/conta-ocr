@@ -1,0 +1,36 @@
+[project]
+name = "conta-ocr"
+version = "0.1.0"
+description = "Serviço de extração de dados de contas de luz e água (PDF e foto)"
+readme = "README.md"
+authors = [
+    { name = "Felipe Dornelles", email = "lipe.dornelles@hotmail.com" }
+]
+requires-python = ">=3.12"
+dependencies = [
+    "fastapi>=0.165.0",
+    "numpy>=2.5.5",
+    "opencv-python-headless>=5.1.0.95",
+    "paddleocr>=3",
+    "paddlepaddle>=3.3.1",
+    "pillow>=13.0.0",
+    "pymupdf>=2.1",
+    "pytesseract>=0.3.13",
+    "python-dotenv>=1.2.4",
+    "python-multipart>=0.0.34",
+    "uvicorn[standard]>=0.54.0",
+]
+
+[project.scripts]
+conta-ocr = "conta_ocr:main"
+
+[build-system]
+requires = ["uv_build>=0.13.7,<0.14.0"]
+build-backend = "uv_build"
+
+[dependency-groups]
+dev = [
+    "httpx>=0.28.1",
+    "pytest>=9.2.0",
+    "ruff>=0.17.6",
+]
